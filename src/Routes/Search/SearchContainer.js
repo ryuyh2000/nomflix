@@ -36,7 +36,7 @@ export default class extends React.Component{
             this.setState({
                 movieResults,
                 tvResults
-            })
+            });
             
         }catch{
             this.setState({error:"can't find results"});
@@ -48,7 +48,6 @@ export default class extends React.Component{
 
     render(){
         const{movieResults,tvResults,searchTerm,error,loading}=this.state;
-        console.log(this.state);
         return(
             <SearchPresenter
                 movieResults={movieResults}
@@ -56,6 +55,7 @@ export default class extends React.Component{
                 searchTerm={searchTerm}
                 error={error}
                 loading={loading}
+                handleSubmit={this.handleSubmit}
             />
         )
     }
